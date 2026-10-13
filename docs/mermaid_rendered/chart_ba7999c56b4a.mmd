@@ -1,0 +1,38 @@
+erDiagram
+    USERS ||--o{ APPOINTMENTS : "tiếp nhận"
+    USERS ||--o{ COUNSELING_LETTERS : "trả lời"
+
+    USERS {
+        text id PK "Mã định danh tài khoản"
+        text username UK "Tên đăng nhập"
+        text passwordHash "Mật khẩu đã mã hóa một chiều"
+        text fullName "Họ và tên cán bộ tư vấn"
+        text role "Vai trò quản trị hoặc tư vấn"
+    }
+
+    COUNSELING_LETTERS {
+        text id PK "Mã thư nội bộ"
+        text trackingCode UK "Mã định danh tra cứu thư"
+        text studentAlias "Biệt danh người gửi"
+        text title "Tiêu đề yêu cầu tư vấn"
+        text content "Nội dung cần hỗ trợ"
+        text status "Trạng thái xử lý"
+        text replyContent "Nội dung phản hồi chuyên môn"
+    }
+
+    APPOINTMENTS {
+        text id PK "Mã phiếu hẹn"
+        text studentName "Tên hoặc biệt danh đăng ký"
+        text contactInfo "Phương thức liên hệ"
+        text appointmentDate "Ngày hẹn"
+        text timeSlot "Khung giờ hẹn"
+        text format "Hình thức tham vấn"
+        text status "Trạng thái lịch hẹn"
+    }
+
+    MENTAL_RESOURCES {
+        text id PK "Mã bài viết"
+        text title "Tiêu đề cẩm nang"
+        text slug UK "Đường dẫn bài đọc"
+        text category "Chủ đề bài viết"
+    }

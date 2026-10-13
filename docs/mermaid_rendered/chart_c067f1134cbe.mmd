@@ -1,0 +1,23 @@
+sequenceDiagram
+    autonumber
+    actor HS as Người dùng (Ẩn danh)
+    participant Web as Giao diện Web
+    participant Server as Bộ xử lý Trung tâm
+    participant DB as Kho Lưu trữ Dữ liệu
+    actor GV as Cán bộ Tư vấn
+
+    HS->>Web: 1. Soạn nội dung tư vấn với biệt danh tùy chọn
+    Web->>Server: 2. Gửi dữ liệu yêu cầu tư vấn
+    Server->>DB: 3. Lưu trữ thư và khởi tạo mã định danh LTR-XXXXXX
+    Server-->>Web: 4. Trả mã định danh tra cứu cho người dùng
+    Web->>HS: 5. Cung cấp mã định danh bảo mật LTR-XXXXXX
+
+    GV->>Server: 6. Đăng nhập và truy xuất danh sách thư cần phản hồi
+    Server->>DB: 7. Truy vấn nội dung thư
+    GV->>Server: 8. Gửi văn bản phản hồi và định hướng can thiệp
+    Server->>DB: 9. Cập nhật nội dung phản hồi vào cơ sở dữ liệu
+
+    HS->>Web: 10. Nhập mã định danh LTR-XXXXXX để tra cứu
+    Web->>Server: 11. Gửi yêu cầu truy xuất phản hồi theo mã
+    Server-->>Web: 12. Trả kết quả phản hồi chuyên môn
+    Web->>HS: 13. Hiển thị nội dung tư vấn bảo mật

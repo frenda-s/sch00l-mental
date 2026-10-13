@@ -1,0 +1,8 @@
+# Sao chép file này thành .dev.vars rồi điền giá trị thật (KHÔNG commit .dev.vars).
+# Lấy giá trị từ: turso db show <tên-db>  và  turso db tokens create <tên-db>
+
+TURSO_DATABASE_URL=libsql://your-db.turso.io
+TURSO_AUTH_TOKEN=your-turso-auth-token
+SESSION_SECRET=thay-bang-chuoi-ngau-nhien-dai-it-nhat-32-ky-tu
+APP_ENV=development
+CORS_ORIGIN=http://localhost:5173

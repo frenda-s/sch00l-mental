@@ -1,0 +1,10 @@
+flowchart TD
+    Start(["1. Nộp 80 câu trả lời"]) --> Loop["2. Quét duyệt từng câu"]
+    Loop --> Calc["3. Cộng dồn điểm theo 8 chủ đề"]
+    Loop --> CheckFlag{"4. Có câu Cờ đỏ và Điểm >= 2?"}
+
+    CheckFlag -- Đúng --> SetRisk["5a. Gán Nguy cơ cao = ĐÚNG - Lưu mã báo động"]
+    CheckFlag -- Sai --> NextStep["5b. Tiếp tục sang phân loại"]
+
+    SetRisk --> NextStep
+    Calc --> NextStep

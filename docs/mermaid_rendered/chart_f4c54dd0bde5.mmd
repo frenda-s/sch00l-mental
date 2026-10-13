@@ -1,0 +1,24 @@
+graph TD
+    subgraph UI["Lớp 1: Giao diện người dùng"]
+        M1["Trang chủ và Cẩm nang"]
+        M2["Phân hệ Sàng lọc"]
+        M3["Hòm thư tư vấn"]
+        M4["Đặt lịch hẹn"]
+        M5["Bảng điều khiển quản trị"]
+    end
+
+    subgraph API["Lớp 2: Bộ xử lý trung tâm"]
+        DH["Bộ điều hướng yêu cầu"]
+        XN["Xác thực phiên làm việc"]
+        TD["Thuật toán tính điểm"]
+        MT["Cơ chế cấp mã định danh"]
+    end
+
+    M1 --> DH
+    M2 --> DH
+    M3 --> DH
+    M4 --> DH
+    M5 --> XN --> DH
+
+    DH --> TD
+    DH --> MT

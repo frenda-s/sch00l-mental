@@ -1,0 +1,19 @@
+flowchart TD
+    NextStep(["Tiếp nhận điểm số"]) --> ScoreCheck{"Tổng điểm chủ đề?"}
+
+    ScoreCheck -- "0 - 9" --> M1["Mức 1: Bình thường"]
+    ScoreCheck -- "10 - 13" --> M2["Mức 2: Nhẹ"]
+    ScoreCheck -- "14 - 20" --> M3["Mức 3: Vừa"]
+    ScoreCheck -- "21 - 27" --> M4["Mức 4: Cao"]
+    ScoreCheck -- "28 - 30" --> M5["Mức 5: Rất cao"]
+
+    M4 --> SetHigh["Gán Nguy cơ cao = ĐÚNG"]
+    M5 --> SetHigh
+
+    M1 --> FinalEval{"Có dấu hiệu Nguy cơ cao?"}
+    M2 --> FinalEval
+    M3 --> FinalEval
+    SetHigh --> FinalEval
+
+    FinalEval -- Đúng --> AlertOut(["Bật Cảnh báo đỏ: Hotline 111 & Hẹn khẩn"])
+    FinalEval -- Sai --> ChartOut(["Hiện biểu đồ kết quả: Gợi ý tự chăm sóc"])

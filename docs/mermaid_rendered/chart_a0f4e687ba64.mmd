@@ -1,0 +1,20 @@
+sequenceDiagram
+    autonumber
+    actor HS as Học sinh (Ẩn danh)
+    participant Web as Giao diện Web
+    participant Server as Bộ xử lý Trung tâm
+    participant DB as Kho Lưu trữ Dữ liệu
+
+    HS->>Web: 1. Truy cập Website (Không cần đăng nhập)
+    Web->>HS: 2. Hiển thị 8 nhóm bài kiểm tra tâm lý
+    HS->>Web: 3. Trả lời các câu hỏi lựa chọn (0 đến 3 điểm)
+    Web->>Server: 4. Gửi tập câu trả lời (Dữ liệu số thuần túy)
+    Server->>Server: 5. Tính tổng điểm & Quét cờ đỏ tự hại
+    Server->>DB: 6. Lưu kết quả ẩn danh
+    Server-->>Web: 7. Trả kết quả ngay lập tức
+
+    alt Có dấu hiệu Nguy cơ rất cao / Cờ đỏ
+        Web->>HS: 8a. BẬT CẢNH BÁO ĐỎ: Cung cấp Tổng đài 111 & Nút hẹn gấp
+    else Trạng thái Nhẹ hoặc Bình thường
+        Web->>HS: 8b. Hiển thị biểu đồ phân tích & Gợi ý cẩm nang tự chăm sóc
+    end

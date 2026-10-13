@@ -1,0 +1,23 @@
+graph TD
+    subgraph Engine["Lớp 2: Bộ xử lý trung tâm"]
+        TD["Thuật toán tính điểm"]
+        MT["Cơ chế cấp mã định danh"]
+        DH["Bộ điều hướng yêu cầu"]
+        XN["Xác thực phiên làm việc"]
+    end
+
+    subgraph DB["Lớp 3: Kho dữ liệu an toàn"]
+        D1[("Bảng Kết quả chi tiết")]
+        D2[("Bảng Thư tư vấn")]
+        D3[("Bảng Phiên sàng lọc")]
+        D4[("Bảng Lịch hẹn")]
+        D5[("Bảng Cẩm nang tâm lý")]
+        D6[("Bảng Tài khoản quản trị")]
+    end
+
+    TD --> D1
+    MT --> D2
+    DH --> D3
+    DH --> D4
+    DH --> D5
+    XN --> D6

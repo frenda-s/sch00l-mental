@@ -1,0 +1,14 @@
+node_modules
+dist
+.wrangler
+.dev.vars
+.env
+.env.*
+!.env.example
+*.log
+local.db
+local.db-shm
+local.db-wal
+.DS_Store
+drizzle/meta/_journal.json
+tsconfig.tsbuildinfo

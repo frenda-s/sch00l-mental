@@ -1,0 +1,19 @@
+erDiagram
+    SCREENINGS ||--|{ SCREENING_RESULTS : "chứa chi tiết điểm 8 nhóm"
+
+    SCREENINGS {
+        text id PK "Mã phiên làm bài"
+        text userId "Mã tài khoản (rỗng nếu ẩn danh)"
+        text guestSessionId "Mã phiên làm việc ẩn danh"
+        integer createdAt "Thời điểm làm bài"
+    }
+
+    SCREENING_RESULTS {
+        text id PK "Mã chi tiết kết quả"
+        text screeningId FK "Thuộc bài khảo sát nào"
+        text topic "Chủ đề kiểm tra"
+        integer score "Điểm số đạt được (0-30)"
+        text severity "Mức độ đánh giá"
+        boolean isHighRisk "Cờ cảnh báo nguy cơ cao"
+        text answersJson "Tập câu trả lời"
+    }
