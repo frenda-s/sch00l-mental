@@ -1,6 +1,7 @@
 name = "school-mental-health"
 main = "src/server/index.ts"
 compatibility_date = "2024-11-27"
+account_id = "f30ef23d0263fff7a42e7bab8dd0457d"
 
 # Turso biến môi trường — lấy qua `wrangler secret put` hoặc .dev.vars (local).
 # Không commit giá trị thật vào repo.
